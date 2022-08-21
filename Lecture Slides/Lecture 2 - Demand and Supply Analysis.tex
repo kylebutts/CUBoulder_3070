@@ -1,0 +1,1085 @@
+\documentclass[12pt,t]{beamer}
+\input{preamble.tex}
+
+\author{Kyle Butts}
+\title{Lecture 2 - Demand and Supply}
+\subtitle{ECON 3070 - Intermediate Microeconomic Theory}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+  In this lecture, we will review the following:
+  \begin{enumerate}
+    \item Supply and demand
+
+    \item Market equilibrium, both graphically and numerically
+
+    \item Elasticities
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Demand, Supply and Market Equilibrium}
+  A \textit{perfectly competitive market} comprises a large number of buyers and sellers.
+  \begin{itemize}
+    \item Buyers and sellers act as \textit{price takers} in these markets.
+    \item Sellers all produce identical products.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 30,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+    y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+    xlabel = {\small Quantity (billion of bushels per year)},
+    ylabel = {\small Price (dollars per bushel)},
+    clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small Demand};
+        
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small Supply};
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 3) (14, 3) (14, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(9, 0) (9, 3)};
+  
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(9, 3) (11, 4) (14, 3)};
+      \node [above] at (11, 4.25) {\small $E$};
+  
+      % Labels
+      \node [left] at (0, 3) {\small $\$3$};
+      \node [left] at (0, 4) {\small $\$4$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (9, 0) {\small $9$};
+      \node [below] at (11, 0) {\small $11$};
+      \node [below] at (14, 0) {\small $14$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Demand, Supply and Market Equilibrium}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Which of the following would most likely be considered a perfectly competitive market?
+
+  \begin{enumerate}[A)]
+    \item The craft beer industry
+    \item The grill industry
+    \item The dog breeding industry
+    \item The soybean industry
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Demand Curves}
+  \textbf{The market demand curve} tells us the quantity of corn that buyers are willing to purchase at different prices.
+  \begin{itemize}
+    \item \textbf{Derived demand} is derived from the production and sale of other goods. \emph{E.g.} computer chips are not purchaseddirectly, but are used as an input for computers/phones.
+    \item \textbf{Direct demand} is demand that comes directly from consumers.
+  \end{itemize}
+
+  \pause\bigskip
+  The \textbf{law of demand} is the inverse relationship between the price of a good and the quantity demanded of that good.
+\end{frame}
+
+
+\begin{frame}{Calculating Quantity Demanded}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Suppose that the demand curve for Chaco's sandals in Boulder is given by $Q^D_{chaco} = 40,000  - 500P_{chaco}$. What is the quantity demanded of Chaco's if the price is $ \$ 60 $?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item 37,000 pairs
+    \item  1,000 pairs
+    \item 10,000 pairs
+    \item 260,000 pairs
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Aggregating Demand}
+  Consider if you have two consumers of a good. Each consumer's demand curve tells us \emph{at a given price}, how many units will they buy.
+
+  \bigskip
+  How do we figure out the aggregate demand curve? 
+  
+  \pause 
+  \begin{itemize}
+    \item \emph{At a given price}, add up each consumer's quantity demanded
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Aggregating Demand}
+  Demand cannot be negative. So when we state demand as
+  $$
+    Q^D_{chaco} = 40,000  - 500P_{chaco}
+  $$
+  we are actually saying
+  $$
+    Q^D_{chaco} =
+    \begin{cases}
+      40,000  - 500P_{chaco} & \text{if } P_{chaco} \leq 80 \\
+      0                      & \text{otherwise}.
+    \end{cases}
+  $$
+\end{frame}
+
+\begin{frame}{Aggregating Demand}{Example}
+  Suppose we have two consumers, A and B. Suppose that
+  $$
+    Q_A^D =
+    \begin{cases}
+      20 - 2P & \text{if } P \leq 10 \\
+      0       & \text{otherwise}.
+    \end{cases}
+    \quad\quad
+    Q_B^D =
+    \begin{cases}
+      21 - 3P & \text{if } P  \leq 7 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+
+  \bigskip
+  \alice{What's the aggregate demand curve?}
+\end{frame}
+
+\begin{frame}{Aggregating Demand}{Example}
+  $$
+    Q_A^D =
+    \begin{cases}
+      20 - 2P & \text{if } P \leq 10 \\
+      0       & \text{otherwise}.
+    \end{cases}
+    \quad\quad
+    Q_B^D =
+    \begin{cases}
+      21 - 3P & \text{if } P  \leq 7 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+
+  \vspace{10mm}
+  \only<1>{
+    At a price of $P \leq 7$, both consumers will purchase good, so aggregate demand is given by
+    $$Q^D_{mkt} = Q_A^D + Q_B^D = (20 - 2P) + (21 - 3P) = 41 - 5P$$
+  }
+
+  \only<2>{
+    At a price $7 < P \leq 10$, only consumer A will consume ($Q_B^D = 0$), so aggregate demand is given by
+    $$Q^D_{mkt} = Q_A^D + Q_B^D = (20 - 2P) + 0 = 20 - 2P$$
+  }
+
+  \only<3> {
+    At a price $P > 10$, no one consumes anything, so 
+    $$Q^D_{mkt} = Q_A^D + Q_B^D = 0 + 0 = 0$$ 
+  }
+\end{frame}
+
+\begin{frame}{Aggregating Demand}{Example}
+  Putting this together
+  $$
+    Q_{mkt}^D =
+    \begin{cases}
+      41 - 5P & \text{if } P \leq 7      \\
+      20 - 2P & \text{if } 7 < P \leq 10 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 24,
+    ymin = 0, ymax = 6,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+    y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+    xlabel = {\small $Q$ (liters of orange juice per month)},
+    ylabel = {\small $P$ (dollars per liter},
+    clip = false,
+    ]
+      % Demand Curves
+      \addplot[color = alice!50!white, very thick] 
+        coordinates {(0, 3) (6, 0)};
+      \node [anchor = south west, text width = 3cm] at (5.5, 0) 
+        {\small $D_A$};
+      
+      \addplot[color = alice!50!white, very thick] 
+        coordinates {(0, 5) (15, 0)};
+      \node [anchor = south west, text width = 3cm] at (15, 0) 
+        {\small $D_B$};
+
+      % Aggregate Demand
+      \addplot[color = alice, very thick] 
+      coordinates {(0, 5) (6, 3) (21, 0)};
+      \node [anchor = south west, text width = 3cm] at (21, 0) 
+        {\small $D_{mkt}$};
+        
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 1) (16, 1) (16, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(4, 1) (4, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(12, 1) (12, 0)};
+
+      % Coordinate Points
+      \node [left] at (0, 3) {\small $\$3$};
+  
+      % Labels
+      \node [left] at (0, 0) {\small $0$};
+      \node [left] at (0, 1) {\small $1$};
+      \node [left] at (0, 2) {\small $2$};
+      \node [left] at (0, 3) {\small $3$};
+      \node [left] at (0, 4) {\small $4$};
+      \node [left] at (0, 5) {\small $\$5$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (4, 0) {\small $4$};
+      \node [below] at (6, 0) {\small $6$};
+      \node [below] at (12, 0) {\small $12$};
+      \node [below] at (15, 0) {\small $15$};
+      \node [below] at (16, 0) {\small $16$};
+      \node [below] at (21, 0) {\small $21$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 24,
+    ymin = 0, ymax = 6,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+    y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+    xlabel = {\small $Q$ (liters of orange juice per month)},
+    ylabel = {\small $P$ (dollars per liter},
+    clip = false,
+    ]
+      % Demand Curves
+      \addplot[color = alice!50!white, very thick] 
+        coordinates {(0, 3) (6, 0)};
+      \node [anchor = south west, text width = 3cm] at (5.5, 0) 
+        {\small $D_A$};
+      
+      \addplot[color = alice!50!white, very thick] 
+        coordinates {(0, 5) (15, 0)};
+      \node [anchor = south west, text width = 3cm] at (15, 0) 
+        {\small $D_B$};
+
+      % Aggregate Demand
+      \addplot[color = alice, very thick] 
+      coordinates {(0, 5) (6, 3) (21, 0)};
+      \node [anchor = south west, text width = 3cm] at (21, 0) 
+        {\small $D_{mkt}$};
+        
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (3, 4) (3, 0)};
+
+      % Coordinate Points
+      \node [left] at (0, 3) {\small $\$3$};
+  
+      % Labels
+      \node [left] at (0, 0) {\small $0$};
+      \node [left] at (0, 1) {\small $1$};
+      \node [left] at (0, 2) {\small $2$};
+      \node [left] at (0, 3) {\small $3$};
+      \node [left] at (0, 4) {\small $4$};
+      \node [left] at (0, 5) {\small $\$5$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (4, 0) {\small $4$};
+      \node [below] at (6, 0) {\small $6$};
+      \node [below] at (12, 0) {\small $12$};
+      \node [below] at (15, 0) {\small $15$};
+      \node [below] at (16, 0) {\small $16$};
+      \node [below] at (21, 0) {\small $21$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself}
+
+  \bigskip
+  Find the aggregate demand curve:
+  $$
+    Q_A^D =
+    \begin{cases}
+      30 - 6P & \text{if } P \leq 5 \\
+      0       & \text{otherwise}.
+    \end{cases}
+    \quad\quad
+    Q_B^D =
+    \begin{cases}
+      32 - 4P & \text{if } P  \leq 8 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+\end{frame}
+
+\begin{frame}{Supply Curves}
+  \textbf{The market supply curve} tells us the quantity of a product that producers are willing to sell at different prices.
+
+  \begin{itemize}
+    \item The \textbf{law of supply} is the \emph{positive} relationship between the price of a good and the quantity supplied of that good.
+  \end{itemize}
+
+  \pause
+  \bigskip
+  Quantity supplied is affected by not just market price. For example, the prices of \textbf{factors of production}, or resources used in the production of the good, affect the quantity supplied.
+\end{frame}
+
+\begin{frame}{Calculating Quantity Supplied}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Suppose that the supply curve for Chaco's sandals in Boulder is given by $Q^S_{chaco} = -8,000 + 300P_{chaco}$. What is the quantity supplied of Chaco's if the price is $ \$ 50 $?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item 7,000 pairs
+    \item  15,000 pairs
+    \item 23,000 pairs
+    \item 0 pairs
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Demand, Supply and Market Equilibrium}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Which of the following would most likely be considered a perfectly competitive market?
+
+  \begin{enumerate}[A)]
+    \item The craft beer industry
+    \item The grill industry
+    \item The dog breeding industry
+    \item The soybean industry
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+      width = 12cm,
+      height = 9cm,
+      xmin = 0, xmax = 30,
+      ymin = 0, ymax = 9,
+      axis lines = left,
+      xtick = \empty, ytick = \empty,
+      x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+      y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+      xlabel = {\small Quantity (billion of bushels per year)},
+      ylabel = {\small Price (dollars per bushel)},
+      clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small Demand};
+        
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small Supply};
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 3) (9, 3) (9, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(14, 3) (14, 0)};      
+
+      % Curly brace
+      \draw [decorate,decoration={brace,amplitude=2pt,mirror}, yshift = -0.2cm]
+        (axis cs:9,3) -- (axis cs:14,3) node [black, midway, yshift = -0.8cm] 
+        {\small 
+          \begin{tabular}{l}Excess demand \\ when price is $\$3$\end{tabular}
+        };
+  
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(9, 3) (11, 4) (14, 3)};
+      \node [above] at (11, 4.25) {\small $E$};
+  
+      % Labels
+      \node [left] at (0, 3) {\small $\$3$};
+      \node [left] at (0, 4) {\small $\$4$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (9, 0) {\small $9$};
+      \node [below] at (11, 0) {\small $11$};
+      \node [below] at (14, 0) {\small $14$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 30,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+    y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+    xlabel = {\small Quantity (billion of bushels per year)},
+    ylabel = {\small Price (dollars per bushel)},
+    clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small Demand};
+        
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small Supply};
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 5) (8, 5) (8, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(13, 5) (13, 0)};      
+
+      % Curly brace
+      \draw [decorate,decoration={brace,amplitude=2pt}, yshift = 0.2cm]
+        (axis cs:8,5) -- (axis cs:13,5) node [black, midway, yshift = 0.8cm] 
+        {\small \begin{tabular}{l}Excess supply \\ when price is $\$5$\end{tabular} };
+  
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(8, 5) (11, 4) (13, 4)};
+      \node [above] at (11, 4.25) {\small $E$};
+  
+      % Labels
+      \node [left] at (0, 3) {\small $\$3$};
+      \node [left] at (0, 4) {\small $\$4$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (8, 0) {\small $8$};
+      \node [below] at (11, 0) {\small $11$};
+      \node [below] at (13, 0) {\small $13$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Market Equilibrium}
+  \textbf{Equilibrium} occurs at the price where quantity supplied equals quantity demanded. \alice{\emph{Why is this an equilibrium?}}
+
+  \pause
+  \begin{itemize}
+    \item What would happen if the price is \$5 per bushel? \pause Excess supply will lead to a price war by suppliers.
+      \begin{itemize}
+        \item The price will fall until all units are sold.
+      \end{itemize}
+
+    \pause 
+    \item What would happen if the price is \$3 per bushel? \pause Excess demand will lead to a bidding war by consumers.
+      \begin{itemize}
+        \item The price will rise until all consumers are satisified.
+      \end{itemize}
+  \end{itemize}
+
+
+  \pause 
+  Therefore, \$4 is an equilibrium because, absent any external forces, the price will not change.
+\end{frame}
+
+\begin{frame}{Calculating Market Equilibrium}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Suppose that the supply curve for Chaco's sandals in Boulder is given by $Q^S_{chaco} = -8,000 + 300P_{chaco}$, and the demand curve is $Q^D_{chaco} = 40,000  - 500P_{chaco}$. What is the equilibrium price of Chaco's?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item \$80
+    \item  \$40
+    \item \$240
+    \item \$60
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Aggregating Supply}
+  Consider if you have two producers of a good. Each producer's supply curve tells us \emph{at a given price}, how many units will they sell.
+
+  \bigskip
+  How do we figure out the aggregate supply curve? 
+  
+  \pause 
+  \begin{itemize}
+    \item \emph{At a given price}, add up each producer's quantity supplied
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Aggregating Supply}
+  Suppose we have two producers, A and B. Suppose that
+  $$
+    Q_A^S =
+    \begin{cases}
+      4P - 12 & \text{if } P \geq 3 \\
+      0       & \text{otherwise}.
+    \end{cases} 
+    \quad\quad
+    Q_B^S =
+    \begin{cases}
+      3P - 15 & \text{if } P  \geq 5 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+
+  \vspace{10mm}
+  \only<1>{
+    At a price of $P \geq 5$, both producers will supply, so supply is given by
+    $$Q_{mkt}^S = Q_A^S + Q_B^S = (20 - 2P) + (21 - 3P) = 41 - 5P$$
+  }
+
+  \only<2>{
+    At a price $3 \leq P < 5$, only producer A will produce ($Q_B^S = 0$), so supply is given by
+    $$Q_{mkt}^S = Q_A^S + Q_B^S = (20 - 2P) + 0 = 20 - 2P$$
+  }
+
+  \only<3> {
+    At a price $P < 3$, no one produces anything, so 
+    $$Q_{mkt}^S = Q_A^S + Q_B^S = 0 + 0 = 0$$ 
+  }
+\end{frame}
+
+\begin{frame}{Aggregating Supply}
+  Putting this together, we have 
+  $$
+    Q_{mkt}^S =
+    \begin{cases}
+      7P - 27 & \text{if } P \geq 5     \\
+      4P - 12 & \text{if } 3 < P \leq 5 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself}
+
+  \bigskip
+  Find the aggregate supply curve:
+
+  $$
+    Q_A^S =
+    \begin{cases}
+      5P - 25 & \text{if } P \geq 5 \\
+      0       & \text{otherwise}.
+    \end{cases}
+    \quad\quad
+    Q_B^S =
+    \begin{cases}
+      3P - 24 & \text{if } P  \geq 8 \\
+      0       & \text{otherwise}.
+    \end{cases}
+  $$
+\end{frame}
+
+\begin{frame}{Shifts in Supply and Demand}
+  Previously, we assumed that all factors other than price were fixed. But suppose that consumer incomes increase.
+  \only<1>{\alice{\emph{What happens to the demand curve?}}}
+
+  \bigskip
+  \pause
+  \begin{itemize}
+    \item This causes the demand curve to shift to the right.
+
+    \pause
+    \item The price will rise, and the quantity sold will rise.
+
+    \item Other causes of a demand shift are changes in preferences, the number of consumers, and expectations.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 25,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:1,0)},anchor=north east},
+    y label style={at={(axis description cs:0,1)},anchor=south east},
+    xlabel = {Quantity},
+    ylabel = {Price},
+    clip = false,
+    ]
+      % Demand Curve 1
+      \addplot[color = alice!50!white, very thick] 
+        coordinates {(0, 17/3) (11, 2) (14, 1) (17, 0)};
+      \node [anchor = south west, text width = 3cm] at (17, 0) 
+        {\small $D_1$};
+        
+      % Demand Curve 2
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small $D_2$};
+      
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small $S$};
+
+
+
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(8.5, 2.8) (11, 4)};
+      \node [above] at (8.5, 3) {\small $A$};
+      \node [above] at (11, 4.25) {\small $B$};
+
+      % Curve shift arrow
+      \draw[-stealth, very thick, alice] (axis cs:1.8, 5.5) -- (axis cs:5.5, 5.5);
+  
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 2.8) (8.5, 2.8) (8.5, 0)};
+
+      % Axis Labels
+      \node [anchor = south, rotate = 90] at (axis cs: 0, 3.375) 
+      {\begin{tabular}{c}{\small Equilibrium price goes up} \\ $\rightarrow$\end{tabular}};
+
+      \node [anchor = north] at (axis cs: 9.8, 0) 
+      {\begin{tabular}{c}$\rightarrow$ \\ {\small Equilibrium quantity goes up}\end{tabular}};
+
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Shifts in Supply and Demand}
+  Suppose now that the price of labor increases. \only<1>{\alice{\emph{What happens to the supply curve?}}}
+
+  \bigskip
+  \pause
+  \begin{itemize}
+    \item This causes the supply curve to shift to the left.
+
+    \pause
+    \item Price increases and quantity sold decreases.
+
+    \item Other causes of a supply shift are changes in technology, input prices, number of suppliers, and expectations.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 25,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:1,0)},anchor=north east},
+    y label style={at={(axis description cs:0,1)},anchor=south east},
+    xlabel = {Quantity},
+    ylabel = {Price},
+    clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small $D$};
+        
+      % Supply Curve 1
+      \addplot[color = ruby!50!white, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small $S_1$};
+
+      % Supply Curve 2
+      \addplot[color = ruby, very thick] 
+      coordinates {(0, 1/2) (5, 3) (7, 4) (11, 6) (15, 8)};
+      \node [anchor = south west, text width = 3cm] at (15, 7.5) 
+        {\small $S_2$};
+     
+
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(8.6, 4.8) (11, 4)};
+      \node [above] at (11, 4.25) {\small $A$};
+      \node [above] at (8.5, 5) {\small $B$};
+
+      % Curve shift arrow
+      \draw[-stealth, very thick, ruby] (axis cs:13.8, 5.5) -- (axis cs:10.2, 5.5);
+  
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4.8) (8.5, 4.8) (8.5, 0)};
+
+      % Axis Labels
+      \node [anchor = south, rotate = 90] at (axis cs: 0, 4.4) 
+      {\begin{tabular}{c}{\small Equilibrium price goes up} \\ $\rightarrow$\end{tabular}};
+
+      \node [anchor = north] at (axis cs: 9.8, 0) 
+      {\begin{tabular}{c}$\leftarrow$ \\ {\small Equilibrium quantity goes down}\end{tabular}};
+
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Shifts in Supply and Demand}
+  What if \textit{both} curves shift simultaneously? Suppose, for example that demand increases but supply decreases.
+
+  \begin{itemize}
+    \item Both of these shifts result in a higher price.
+
+    \item But they pull the equilibrium quantity in opposite directions
+
+    \item We need to know the magnitude to know which direction quantity moves.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself} 
+
+  \bigskip
+  Sketch a decrease in supply and an increase in demand where quantity goes up.
+  Sketch a decrease in supply and an increase in demand where quantity goes does.
+\end{frame}
+
+\begin{frame}{Shifts in Supply and Demand}
+  In general, when both curves shift, the change in either price or quantity will be obvious...
+
+  \begin{itemize}
+    \item ...but not both.
+
+    \item One of these will always be ambiguous. Need to know magnitude of shifts.
+  \end{itemize}
+
+  \pause\bigskip
+  Us professors love to ask questions on this. \textbf{When in doubt, draw it out!}
+\end{frame}
+
+\begin{frame}{Price Elasticity of Demand}
+  Let's say your boss asks you what will happen to sales if they increase the price of their product. Don't you dare say "sales will go down". 
+  \emph{duh!!}
+
+  \pause\bigskip
+  We want to be able to predict \alice{how much} sales go down when we increase prices. \emph{Way more useful!}
+
+  \pause\bigskip
+  This is the \textbf{price elasticity of demand}
+\end{frame}
+
+\begin{frame}{Price Elasticity of Demand}
+  \bgKelly{Price elasticity of demand} 
+  
+  Measures the sensitivity of the quantity demanded to changes in the price.
+
+  $$
+    \epsilon_{Q,P} = \frac{\text{percentage change in quantity}}{\text{percentage change in price}}
+  $$
+
+  \pause\bigskip
+  Remembering our percent change formula
+  $$
+    \epsilon_{Q,P} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P} } = \frac{\Delta Q}{\Delta P} \frac{P}{Q}
+  $$
+\end{frame}
+
+\begin{frame}{Interpreting Elasticities}
+  \only<1>{
+  $$
+    \epsilon_{Q,P} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P} }
+  $$
+  }
+  \only<2>{
+  $$
+    \epsilon = \frac{ \frac{\Delta \text{Top Thing}}{\text{Top Thing}} }{ \frac{\Delta \text{Bottom Thing}}{\text{Bottom Thing}} }
+  $$
+  }
+  \bigskip
+
+  \only<1>{
+    A $1$\% increase in price yields a $\epsilon_{Q,P}$\% change in quantity. 
+  }
+  \only<2>{
+    More generally, the way we \emph{always} interpret elasticities is:
+    
+    \bigskip
+    A $1$\% increase in \alice{Bottom Thing} yields a $\epsilon$\% change in \alice{Top Thing}
+  }
+\end{frame}
+
+\begin{frame}{Calculating Elasticity}
+  There's all kinds of elasticities we care about in economics. 
+
+  \begin{itemize}
+    \item The government might care what the price elasticity of demand is for cigarettes if they want to impose a tax.
+
+    \item Or they might want to know what the cross-price elasticity of demand is for electric vehicles with respect to the price of gas.
+
+    \item And if the government does impose some tax... firms might want to know how much of that tax they can pass on to consumers via higher prices.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \bgKelly{Income elasticity of demand} 
+  
+  \bigskip
+  \% change in quantity demanded for every 1\% change in income.
+  $$
+    \epsilon_{Q,I} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta I}{I}} = \frac{\Delta Q}{\Delta I}\frac{I}{Q}
+  $$
+
+  \bigskip
+  \bgKelly{Price elasticity of supply} 
+  
+  \bigskip
+  \% change in quantity supplied for every 1\% change in price of good.
+  $$
+    \epsilon_{Q^S,P} = \frac{\frac{\Delta Q^s}{Q^s}}{\frac{\Delta P}{P}} = \frac{\Delta Q^s}{\Delta P}\frac{P}{Q^s}
+  $$
+\end{frame}
+
+\begin{frame}
+  \bgKelly{Cross-price elasticity of demand} 
+  
+  \bigskip
+  \% change in quantity demanded of good $i$ for every 1\% change in price of good $j$.
+  $$
+    \epsilon_{Q_i,P_j}= \frac{\frac{\Delta Q_i}{Q_i}}{\frac{\Delta P_j}{P_j}}=\frac{\Delta Q_i}{\Delta P_j}\frac{P_j}{Q_i}
+  $$
+  
+  \pause\bigskip
+  If $\epsilon_{Q_i,P_j}>0$, then as $P_j$ increases, $Q_i$ increases.
+  \begin{itemize}
+    \item Then goods $i$ and $j$ are \textbf{substitutes}.
+  \end{itemize}
+  
+  \pause\bigskip
+  If $\epsilon_{Q_i,P_j}<0$, then as $P_j$ increases, $Q_i$ decreases.
+  \begin{itemize}
+    \item Then goods $i$ and $j$ are \textbf{compliments}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Calculating Elasticity}
+  \bgCoral{Try It Yourself}
+
+\bigskip
+Suppose that when the price of car tires is \$100 per tire, quantity demanded in Detroit is 40,000. Now suppose that the price has fallen to \$90, and the quantity demanded is 50,000. What is the price elasticy of demand?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item  -2.5
+    \item  -2
+    \item  -1/2
+    \item  -0.4
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Elasticity in the Long Run vs. the Short Run}
+  Consumers can't always adjust their demand instantly in response to a price change.
+  \begin{itemize}
+    \item If the price of gasoline doubles, you still have to drive to work.
+
+    \item But after a while, maybe you will buy a more fuel-efficient car.
+  \end{itemize}
+
+  \pause\bigskip
+  Need to distinguish between \textbf{long-run demand curve} and \textbf{short-run demand curve}.
+  \begin{itemize}
+    \item Long run - Consumers have time to fully adjust purchasing decisions.
+
+    \item Short run - Consumers do not.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[c]
+\begin{tikzpicture}
+  \begin{axis}[
+  width = 12cm,
+  height = 9cm,
+  xmin = 0, xmax = 120,
+  ymin = 0, ymax = 7.5,
+  axis lines = left,
+  xtick = \empty, ytick = \empty,
+  x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+  y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+  xlabel = {\small Quantity (trillions of cubic feet per year)},
+  ylabel = {\small Price (dollars per thousand cubic feet)},
+  clip = false,
+  ]
+    % Short-run Demand Curve
+    \addplot[color = alice, very thick] 
+      coordinates {(0, 36/5) (15, 6) (40, 4) (90, 0)};
+    \node [anchor = south west, text width = 3cm] at (42, -0.1) 
+      {\small \begin{tabular}{l}Short-run \\ demand curve\end{tabular}};
+      
+    % Long-run Demand Curve
+    \addplot[color = alice!50!white, very thick] 
+    coordinates {(36,8) (38, 6) (40, 4) (44, 0)};
+    \node [anchor = south west, text width = 3cm] at (88, -0.1) 
+      {\small \begin{tabular}{l}Long-run \\ demand curve\end{tabular}};
+  
+    % Dotted lines
+    \addplot[color = black, dotted, thick] 
+      coordinates {(0, 6) (38, 6) (38, 0)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(0, 4) (40, 4) (40, 0)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(15, 0) (15, 6)};
+
+    % Coordinate Points
+    \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+      coordinates {(15, 6) (38, 6) (40, 4)};
+
+    % Labels
+    \node [left] at (0, 6) {\small $\$6$};
+    \node [left] at (0, 4) {\small $\$4$};
+    \node [below] at (0, 0) {\small $0$};
+    \node [below] at (15, 0) {\small $15$};
+    \node [below] at (36, 0) {\small $38$};
+    \node [below] at (42, 0) {\small $40$};
+  \end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Elasticity in the Long Run vs. the Short Run}
+  The same is true for producers
+  
+  \begin{itemize}
+    \item May not be able to increase output quickly in response to a price increase. Perhaps they are capacity-constrained.
+
+    \item But in the long run, they can build another factory, or hire more workers. And quantity supplied increases.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]
+\begin{tikzpicture}
+  \begin{axis}[
+  width = 12cm,
+  height = 9cm,
+  xmin = 0, xmax = 350,
+  ymin = 0, ymax = 27,
+  axis lines = left,
+  xtick = \empty, ytick = \empty,
+  x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+  y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+  xlabel = {\small Quantity (million megabytes per year)},
+  ylabel = {\small Price (dollars per megabyte)},
+  clip = false,
+  ]
+    % Short-run Supply Curve
+    \addplot[color = ruby!50!white, very thick] 
+      coordinates {(84, 2) (100, 10) (120, 20) (124, 22)};
+    \node [above, text width = 3cm] at (124, 22) 
+      {\small \begin{tabular}{l}Short-run \\ supply curve\end{tabular}};
+      
+    % Long-run Supply Curve
+    \addplot[color = ruby, very thick] 
+      coordinates {(25, 5) (100, 10) (250, 20) (265, 21)};
+    \node [above, text width = 3cm] at (265, 22) 
+      {\small \begin{tabular}{l}Long-run \\ supply curve\end{tabular}};
+  
+    % Dotted lines
+    \addplot[color = black, dotted, thick] 
+      coordinates {(0, 20) (260, 20)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(0, 10) (260, 10)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(100, 0) (100, 10)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(120, 0) (120, 20)};
+    \addplot[color = black, dotted, thick] 
+      coordinates {(250, 0) (250, 20)};
+
+    % Coordinate Points
+    \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+      coordinates {(100, 10) (120, 20) (250, 20)};
+
+    % Labels
+    \node [left] at (0, 10) {\small $\$10$};
+    \node [left] at (0, 20) {\small $\$20$};
+    \node [below] at (0, 0) {\small $0$};
+    \node [below] at (90, 0) {\small $100$};
+    \node [below] at (130, 0) {\small $120$};
+    \node [below] at (250, 0) {\small $250$};
+  \end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Elasticity in the Long Run vs. the Short Run}
+  
+  In some cases however, the opposite may be true.
+  
+  \bigskip
+  If price falls for durable goods such as a new refrigerator, consumers may decide it's a good time to upgrade their old one.
+  \begin{itemize}
+    \item But in the end, they don't buy \textit{more} refrigerators. They just buy them sooner.
+    
+    \item In this case, demand is more elastic in the short run
+  \end{itemize}
+
+  
+  \bigskip
+  The same may be true of producers (such as in markets for used or recycled goods).
+\end{frame}
+
+\end{document}

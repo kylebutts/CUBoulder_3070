@@ -1,0 +1,708 @@
+\documentclass[11pt,t]{beamer}
+\input{preamble.tex}
+
+\author{Kyle Butts}
+\title{Lecture 4 - Consumer Choice}
+\subtitle{ECON 3070 - Intermediate Microeconomic Theory}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Overview}
+  In the previous lecture, we looked at consumer preferences.
+  \begin{itemize}
+    \item We considered how consumers ranked various bundles of goods.
+
+    \item We saw how to graphically and numerically represent these preferences.
+  \end{itemize}
+
+  \bigskip
+  In the next lecture, we will consider how consumers choose which bundle to consume.
+\end{frame}
+
+
+\begin{frame}{The Budget Constraint}
+  Consumers only have a limited amount of money to spend on goods and services.
+  \begin{itemize}
+    \item A consumer's \textbf{budget constraint} defines the set of baskets that a consumer can purchase.
+    
+    \pause
+    \item If $P_x$ is the price of good $x$, then $P_x x$ is the amount of money spent on good $x$
+    
+    \item Similarly, $P_y y$ is the amount of money spent on good $y$.
+  \end{itemize}
+  
+  \pause\bigskip
+  Because a consumer can only spend as much as their income, $I$, their budget constraint can be expressed as:
+  $$
+    \alice{P_x x + P_y y \leq I}
+  $$
+\end{frame}
+
+
+
+\begin{frame}{Budget Constraint}
+  The budget constraint can be generalized to more than two goods:
+  $$
+    P_{x_1} x_1 + P_{x_2} x_2 + ... + P_{x_n} x_n \leq I
+  $$
+
+  \bigskip
+  \begin{itemize}
+    \item Because more is better (remember our assumptions), the consumer will always use up their whole budget ($I$).
+
+    \item In general, however, a consumer can purchase any bundle which costs $I$\$ or less.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Budget Line}
+  A consumer's budget constraint for two goods can also be represented graphically. In the equation $P_x x + P_y y = I$, solve for $y$.
+  
+  \pause\bigskip
+  The rearranged equation is 
+  $$
+    y = \frac{I}{P_y} - \frac{P_x}{P_y}x
+  $$
+  
+  \begin{itemize}
+    \item This equation in slope-intercept form can be used to plot our budget line.
+  \end{itemize}
+
+  \bigskip
+  A \textbf{budget line} shows all combinations of goods $x$ and $y$ that can be purchased for a given budget $I$, at given prices $P_x$ and $P_y$.
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself}
+
+  \bigskip
+  Write the budget constraint with $I = 800$, $P_X = 20$, and $P_Y = 40$. Then, solve for $y$.
+\end{frame}
+
+
+\begin{frame}
+  \vspace{-5mm}
+  \begin{figure}
+    \caption{The Budget Line}
+    
+    \begin{tikzpicture}
+      \begin{axis}[
+        width = 10cm,
+        height = 8cm,
+        xmin = 0, xmax = 50,
+        ymin = 0, ymax = 25,
+        axis lines = left,
+        xtick = {0, 10, 20, 30, 40}, 
+        ytick = {5, 10, 15, 20},
+        x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+        y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+        xlabel = {\small $x$, units of food},
+        ylabel = {\small $y$, units of clothing},
+        clip = false,
+      ]
+        % Budget Lines
+        \addplot[domain = 0:40, samples = 400, color = cranberry, thick]{20 - 1/2*x};
+
+        % Highlight Points
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(0, 20) (10, 15) (20, 10) (30, 5) (40, 0)};
+        \node [anchor = south west] at (axis cs:10, 15) {$B$};
+        \node [anchor = south west] at (axis cs:20, 10) {$C$};
+        \node [anchor = south west] at (axis cs:30, 5) {$D$};
+
+        % Dotted lines
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 15) (10, 15) (10, 0)};
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 10) (20, 10) (20, 0)};
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 5) (30, 5) (30, 0)};
+
+        % Annotations
+        \node (A) [anchor = south west, yshift = 0.25cm ] at (axis cs: 40, 0) 
+        [fill=cranberry!20, minimum size=0.5cm]{$\frac{I}{P_X} = 40$};
+
+        \node (E) [anchor = south west, xshift = 0.25cm] at (axis cs: 0, 20) 
+        [fill=cranberry!20, minimum size=0.5cm]{$\frac{I}{P_Y} = 20$};
+
+        \node [anchor = south west] at (axis cs: 25, 15) 
+        [fill=cranberry!20, minimum size=0.5cm]
+        {\begin{tabular}{c}{\small Budget Line:} \\ {$20x + 40y = 800$}\end{tabular}};
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{The Budget Line}
+  The $y$ intercept tells us how many units of good $y$ can be purchased if none of good $x$ is bought. Similarly for the $x$ intercept.
+  
+  \pause\bigskip
+  The slope tells us how many units of good $y$ must be given up to obtain one more unit of good $x$.
+
+  \pause\bigskip
+  \bgCoral{Conceptual questions}
+  \begin{itemize}
+    \item Remember that a change in income shifts the budget line, without changing the slope (why?)
+    
+    \item What would a change in the price of one (or both) of the goods do?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself}
+  
+  \bigskip
+  Suppose that Sammy has \$200 in disposable income to spend each month on concert tickets and football tickets. Concert tickets cost \$50 and football tickets cost \$20. The price of concert tickets increases by \$25, and the price of football tickets increases by \$10. Assume that Sammy's disposable income doesn't change. 
+  
+  Draw the budget line before and after. 
+\end{frame}
+
+\begin{frame}{Optimal Choice}
+  Now that we know the consumer's problem (maximize utility), and their constraint (the budget constraint), we can determine the consumer's optimal choice.
+  \begin{itemize}
+    \item The \textbf{optimal choice} is the amount of each good that should be purchased in order to maximize utility.
+
+    \item This basket of goods must be located on the budget line (why not below?).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Optimal Choice}
+  More formally, we can state the consumer's \textbf{utility maximization} problem as:
+  $$
+    \max_{(x,y)} U(x,y) \text{ subject to: } P_x x + P_y y \leq I
+  $$
+\end{frame}
+
+\begin{frame}{Utility Maximization}
+  How can we interpret this graphically?
+  \begin{itemize}
+    \item Remember that the consumer wants to get to the highest indifference curve possible.
+
+    \item That means moving as far up and to the right as possible
+
+    \item But the consumer can't move beyond their budget line.
+  \end{itemize}
+
+  \pause\bigskip
+  \emph{The optimal bundle ends up being (in most cases) the point where the budget line is tangent with one of the indifference curves.}
+\end{frame}
+
+
+\begin{frame}
+  \vspace{-5mm}
+  \begin{figure}
+    \caption{Utility Maximization}
+    
+    \begin{tikzpicture}
+      \begin{axis}[
+        width = 10cm,
+        height = 8cm,
+        xmin = 0, xmax = 50,
+        ymin = 0, ymax = 25,
+        axis lines = left,
+        xtick = {0, 10, 20, 30, 40}, 
+        ytick = {5, 10, 15, 20},
+        x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+        y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+        xlabel = {\small $x$, units of food},
+        ylabel = {\small $y$, units of clothing},
+        clip = false,
+      ]
+        % Budget Lines
+        \addplot[domain = 0:40, samples = 400, color = cranberry, thick]{20 - 1/2*x};
+
+        % Indifference curves
+        \addplot[domain = 0:50, restrict y to domain = 0:25, samples = 400, color = alice!40!white, very thick]{121/x};
+        % \node [right,color=alice!25!white] at (axis cs: 12, 4/12) {$U = 2$};
+        
+        \addplot[domain = 0:50, restrict y to domain = 0:25, samples = 400, color = alice!70!white, very thick]{200/x};
+
+        \addplot[domain = 0:50, restrict y to domain = 0:25, samples = 400, color = alice!100!white, very thick]{289/x};
+        % \node [right,color=alice!50!white] at (axis cs: 12, 16/12) {$U = 4$};
+
+        % Highlight Points
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+          coordinates {(0, 20) (7.5, 16.25) (20, 10) (30, 5) (40, 0) (16, 7.5) (17, 17)};
+        \node [anchor = south west] at (axis cs:7.5, 16.25) {$B$};
+        \node [anchor = south west] at (axis cs:20, 10) {$A$};
+        \node [anchor = south west] at (axis cs:16, 7.5) {$C$};
+        \node [anchor = south west] at (axis cs:17, 17) {$D$};
+
+        % Dotted lines
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 16.25) (7.5, 16.25) (7.5, 0)};
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 10) (20, 10) (20, 0)};
+
+        % Annotations
+        \node (E) [anchor = south east, xshift = -0.25cm, yshift = 0.5cm] at (axis cs: 0, 20) 
+        [fill=cranberry!20, minimum size=0.5cm]{$\frac{I}{P_Y} = 20$};
+        \addplot[color = black, thick] 
+          coordinates {(-2.25, 22) (0, 20)};
+
+        \node (A) [anchor = north west, yshift = -0.6cm] at (axis cs: 40, 0) 
+          [fill=cranberry!20, minimum size=0.5cm]{$\frac{I}{P_X} = 40$};
+        \addplot[color = black, thick] 
+          coordinates {(45.5, -2.4) (40, 0)};
+
+
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Utility Maximization}
+  To find the consumer's optimal level of consumption of $x$  and $y$, we need some calculus.
+
+  \bigskip
+  We will maximize utility in two-ways:
+  \begin{enumerate}
+    \item The method of lagrange
+
+    \item `plugging-in' the constraint to our problem.
+  \end{enumerate} 
+\end{frame}
+
+\begin{frame}{Method of Lagrange}
+  Define the Lagrangian ($\mathcal{L}$) as 
+  $$
+    \mathcal{L}(x,y,\lambda) = U(x,y) + \lambda(I-P_x x - P_y y)
+  $$
+
+  \only<1>{\bigskip Maximizing the Lagrangian with respect to $x, y,$ and $\lambda$ is equivalent to maximizing the original problem.}
+
+  \pause
+  To maximize the Lagrangian, take derivatives with respect to $x$, $y$, and $\lambda$, and set them equal to zero. The first order conditions for an optimum are:
+
+  \vspace*{-10mm}
+  \begin{align*}
+    &\frac{\delta \mathcal{L}}{\delta x}=0 \Rightarrow \frac{\delta U(x,y)}{\delta x} = \lambda P_x \\
+    &\frac{\delta \mathcal{L}}{\delta y}=0 \Rightarrow \frac{\delta U(x,y)}{\delta y} = \lambda P_y \\
+    &\frac{\delta \mathcal{L}}{\delta \lambda}=0 \Rightarrow I - P_x x - P_y y = 0
+  \end{align*}
+\end{frame}
+  
+\begin{frame}{Method of Lagrange}
+  Remember that $\frac{\delta U(x,y)}{\delta x} = MU_x$ and $\frac{\delta U(x,y)}{\delta y} = MU_y$. Then, rearranging terms:
+
+  $$
+  \frac{MU_x}{P_x} = \lambda \qquad \text{and} \qquad \frac{MU_y}{P_y} = \lambda
+  $$
+
+  \pause\bigskip 
+  We can combine the first two equations and rearrange terms, and the result is:
+
+  $$
+  \frac{MU_x}{P_x} = \frac{MU_y}{P_y}
+  $$
+  
+  \pause\bigskip
+  The resulting equality is our \kelly{optimality condition}.
+\end{frame}
+
+\begin{frame}{Unconstrained Optimization}
+  To solve using unconstrained optimization, first solve for $y$ in the budget constraint $P_x x + P_y y = I$.
+
+  $$
+    y  = \frac{I - P_x x}{P_y} 
+  $$
+
+  \pause\bigskip
+  We then plug this into our utility function, and our problem becomes:
+
+  $$
+    \max_x U(x,\frac{I - P_x x}{P_y}) 
+  $$
+\end{frame}
+
+\begin{frame}{Unconstrained Optimization}
+  To solve using unconstrained optimization, first solve for $y$ in the budget constraint $P_x x + P_y y = I$.
+
+  $$
+    y  = \frac{I - P_x x}{P_y} 
+  $$
+
+  \pause\bigskip
+  We then plug this into our utility function, and our problem becomes:
+
+  $$
+    \max_x U(x,\frac{I - P_x x}{P_y}) 
+  $$
+\end{frame}
+
+
+\begin{frame}{Unconstrained Optimization}
+  How do we maximize (or minimize) any function? \pause
+  \begin{itemize}
+    \item Take derivatives, and set them equal to zero.
+  \end{itemize}
+  
+  Taking the total derivative of $U(x,\frac{I - P_x x}{P_y})$ w.r.t $x$ (using the chain-rule!):
+
+  \begin{align*}
+    \frac{dU}{dx} & =\frac{\delta U}{\delta x} +\frac{\delta U}{\delta y}\frac{dy}{dx} = 0 \\
+    &\Rightarrow \frac{\delta U}{\delta x} -\frac{\delta U}{\delta y}\frac{P_x}{P_y} =0 \\
+    &\Rightarrow \frac{\delta U}{\delta x}/{P_x} = \frac{\delta U}{\delta y} /{P_y} \\
+    &\rightarrow \frac{MU_x}{P_x} = \frac{MU_y} {P_y}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{The \kelly{Optimality Condition}}
+  We have just found our first \bgKelly{optimality condition}! Now that we have derived this from first principles, we don't have to do that again!
+
+  $$
+    \kelly{\frac{MU_x}{P_x} = \frac{MU_y}{P_y}}
+  $$
+
+  \pause\bigskip
+  \begin{itemize}
+    \item The \kelly{optimality condition} tells us that the consumer maximizes utility when the marginal utility per dollar spent on both goods is equal.
+    \item Think about what would happen if it weren't equal for the two goods.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Optimality Condition}
+  We can also rearrange the \kelly{optimality condition} as follows:
+
+  $$
+    \frac{MU_x}{MU_y} = \frac{P_x}{P_y}
+  $$
+
+  \bigskip
+  \begin{itemize}
+    \item This tells us that the slope of our indifference curve should equal the slope of our budget line.
+    \pause
+    \item The result is that the optimal basket is located where the budget line is exactly tangent to one of the indifference curves.
+    \item Compare this to our graphical result.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{The Optimality Condition}
+  So far, we only considered the case where baskets contain two goods. However, the \kelly{optimality condition} holds for any number of goods.
+
+  $$
+    \frac{MU_{x_1}}{P_{x_1}}=\frac{MU_{x_2}}{P_{x_2}}=...=\frac{MU_{x_n}}{P_{x_n}}
+  $$
+
+  \begin{itemize}
+    \item As before, the utility per dollar spent on each good (or ``bang for your buck''), must be equal.
+  \end{itemize}
+
+  \pause\bigskip
+  \begin{center}
+    This is a \emph {key insight}! This \kelly{optimality condition} is how we think individuals balance \cranberry{trade-offs} on what to buy
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \bgCoral{Try It Yourself}
+
+  \bigskip
+  Consider a market with only two goods, bread and cheese. Suppose that at Francis' current level of consumption, his marginal utility of bread is 4, and is marginal utility of cheese is 6. Suppose that a loaf of bread costs \$3, and a pound of cheese costs \$6. What should Francis do?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item Consume more bread and less cheese.
+    \item Consume more cheese and less bread.
+    \item Leave his consumption of bread and cheese unchanged.
+    \item It is impossible to tell without knowing how much bread and cheese he is consuming.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Finding the Optimal Bundle}
+  Now that we know something about the optimal bundle (from the \kelly{optimality condition}), how do we actually find it?
+
+  \begin{itemize}
+    \item Well we also know that the consumer has only  \$$I$ to spend.
+
+    \item This gives us a system of two equations (the \kelly{optimality condition} and the budget constraint), and two unknowns (quantity consumed of goods $x$ and $y$).
+
+  \end{itemize}
+  
+  \pause\bigskip
+  All that's left is some (sometimes messy) algebra.
+\end{frame}
+
+\begin{frame}{Finding the Optimal Bundle}
+  Suppose $U(x,y) = \sqrt{x}\sqrt{y}$. Let $P_x = 2, P_y=3$ and $I = 24$.
+
+  \only<1>{
+    \bigskip
+    Calculate $MU_x$ and $MU_y$ and the \kelly{optimality condition}
+  }
+
+  \only<2->{
+    \bigskip
+    $MU_x = \frac{\sqrt{y}}{2\sqrt{x}}$ and $MU_y = \frac{\sqrt{x}}{2\sqrt{y}}$
+    
+    \bigskip
+    Then our \kelly{optimality condition} is $\frac{\sqrt{y}}{2\sqrt{x}} / \frac{\sqrt{x}}{2\sqrt{y}} = \frac{2}{3} $
+
+    $$
+      \implies y = \frac{2}{3} x
+    $$
+    
+    \pause\bigskip
+    Plugging the \kelly{optimality condition} into our budget constraint
+    $$
+      2x + 3y = 24 \implies 2x + 3(\frac{2}{3} x) = 24 \implies x^* = 6
+    $$
+
+    \pause\bigskip
+    Plugging $x^*$ back into the \kelly{optimality condition}, $y^* = \frac{2}{3} 6 = 4$
+  }
+\end{frame}
+
+\begin{frame}{Finding the Optimal Bundle}
+  We could also leave out prices and income, and simply solve for $x$ and $y$ in terms of $P_x$, $P_y$, and $I$.
+  
+  \bigskip
+  Take the rearranged \kelly{optimality condition} $y = x\frac{P_x}{P_y}$. Plug into budget constraint
+  $$
+    P_x x + P_y x (\frac{P_x}{P_y}) = I \implies x^* = \frac{I}{2P_x}
+  $$ 
+  
+  \bigskip
+  Plug $x$ back into the \kelly{optimality condition}:
+  $$
+    y^* = \frac{I}{2P_x}\frac{P_x}{P_y} = \frac{I}{2P_y}
+  $$
+\end{frame}
+
+\begin{frame}{Demand Functions}
+  The resulting \textbf{demand functions} are:
+  $$
+    x^*(P_x, P_y, I) =  \frac{I}{2P_x} 
+    \quad\text{ and }\quad
+    y^*(P_x, P_y, I) = \frac{I}{2P_y}
+  $$
+
+  \pause\bigskip
+  The \textbf{demand function} is useful since we do the work once and then can predict what that person will consumer under any $(P_x, P_y, I)$ combination for comparitive statics
+  \begin{itemize}
+    \item I'll likely do this on the test
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Three Utility Functions}
+  How do you find demand for the three utility functions?
+  \begin{enumerate}
+    \item \textbf{Cobb-Douglas}: $U(x,y) = x^\alpha y^\beta$
+    
+    \vspace{1.4cm}
+    \item \textbf{Perfect Subsitutes}: $U(x,y) = ax + by$
+    
+    \vspace{1.4cm}
+    \item \textbf{Perfect Complements}: $U(x,y) = \min\big(ax, by\big)$
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Cobb-Douglas}
+  $U(x,y) = x^\alpha y^\beta$. Our \kelly{optimality condition} is 
+  
+  $$
+    \frac{MU_x}{P_x} = \frac{MU_a}{P_y} 
+    \implies \frac{\alpha x^{\alpha - 1} y^{\beta}}{P_x} = \frac{\beta x^{\alpha} y^{\beta - 1}}{P_y} 
+    \implies x = \frac{\alpha P_y}{\beta P_x} y
+  $$
+
+  \bigskip
+  Our budget constraint is 
+  $$
+    I = P_x x + P_y y
+  $$
+
+  \bigskip
+  Solve these two equations for $x^*$ and $y^*$.
+\end{frame}
+
+\begin{frame}{Perfect Substitutes}
+  $U(x,y) = ax + by$. Our \kelly{optimality condition} is
+
+  $$
+    \frac{MU_x}{P_x} = \frac{MU_a}{P_y} \implies \frac{a}{P_x} = \frac{b}{P_y}
+  $$
+
+  \pause\bigskip
+  \textbf{Wait!} This isn't always true!!
+  \begin{itemize}
+    \item e.g. what if $U(x,y) = x + y$, $P_x = 1$, and $P_y = 2$. This says $1 = 1/2$ which isn't true
+  \end{itemize} 
+
+  \pause\bigskip
+  Since both goods are perfectly substitutable, you should consumer \textbf{ONLY} the good that provides marginal utility per dollar (bang for your buck)
+\end{frame}
+
+\begin{frame}{Perfect Substitutes}
+  $U(x,y) = ax + by$. For perfect substitutes our demand rule is simple: 
+  
+  \bigskip
+  \begin{enumerate}
+    \item If $MU_x/P_x > MU_y / P_y$: 
+    $$
+      x^* = I / P_x \quad\text{ and }\quad y^* = 0
+    $$
+
+    \item If $MU_x/P_x < MU_y / P_y$: 
+    $$
+      x^* = 0 \quad\text{ and }\quad y^* = I / P_y
+    $$
+    
+    \item If $MU_x/P_x = MU_y / P_y$: 
+    
+    \begin{center}
+      Pick any bundle on your budget line 
+    \end{center}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Perfect Complements}
+  $U(x,y) = \min\big( ax, by \big)$. How do we even take a derivative of this?
+
+  \pause\bigskip
+  Instead, recognize that perfect complements means you have to consume always in the proportion $ax = by$. 
+  \begin{itemize}
+    \item If $ax > by$, you are wasting money on $x$ and vice-versa if $by > ax$
+  \end{itemize}
+
+  \pause\bigskip
+  $ax = by$ is therefore our \kelly{optimality condition}! Our budget constraint is 
+  $$
+    I = P_x x + P_y y
+  $$
+
+  \bigskip
+  Solve these two equations for $x^*$ and $y^*$.
+\end{frame}
+
+
+\begin{frame}{Clubs and Two-Part Tariffs}
+  Suppose that you have \$300 to spend on CDs (what are those?), and that each CD costs \$20 (call this budget line 1)
+
+  \begin{itemize}
+    \item You can purchase 15 CDs at most, or spend some of that money on other things.
+  \end{itemize}
+
+  \bigskip
+  But what if you could pay \$100, and each CD only cost \$10 (call this budget line 2). This is called a \textbf{two-part tariff}. Part 1: pay to enter the club. Part 2: pay for quantity you want.
+\end{frame}
+
+\begin{frame}
+  \vspace{-5mm}
+  \begin{figure}
+    \caption{Consumer signs up for club}
+    
+    \begin{tikzpicture}
+      \begin{axis}[
+        width = 10cm,
+        height = 8cm,
+        xmin = 0, xmax = 25,
+        ymin = 0, ymax = 400,
+        axis lines = left,
+        xtick = {0, 10, 15, 20}, 
+        ytick = {200, 300},
+        x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+        y label style={at={(axis description cs:-0.12,.5)},anchor=south},
+        xlabel = {\small $CD$, number of CDs},
+        ylabel = {\small $y$, units of the `composite' good},
+        clip = false,
+      ]
+        % Budget Line 1
+        \addplot[domain = 0:15, samples = 400, color = cranberry!60!white, thick]{300 - 20*x};
+        \node [anchor = south west, yshift=-0.2cm] at (axis cs:0, 300) {$BL_1$};
+        
+        % Budget Line 2
+        \addplot[domain = 0:20, samples = 400, color = cranberry, thick]{200 - 10*x};
+        \node [anchor = south west, yshift=-0.2cm] at (axis cs:0, 200) {$BL_2$};
+
+        % Indifference curves
+        \addplot[domain = 7:24, restrict y to domain = 0:400, samples = 400, color = alice!70!white, very thick]{2000/x^(1.1) - 60};
+
+        \addplot[domain = 7:24, restrict y to domain = 0:400, samples = 400, color = alice!100!white, very thick]{2200/x^(1.1) - 60};
+        % \node [right,color=alice!50!white] at (axis cs: 12, 16/12) {$U = 4$};
+
+        % Highlight Points
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+          coordinates {(10, 100)};
+        \node [anchor = north east] at (axis cs:10, 100) {$A$};
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 100) (10, 100) (10, 0)};
+
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+          coordinates {(14, 60)};
+        \node [anchor = south west] at (axis cs:14, 60) {$B$};
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \vspace{-5mm}
+  \begin{figure}
+    \caption{Consumer does not sign up for club}
+    
+    \begin{tikzpicture}
+      \begin{axis}[
+        width = 10cm,
+        height = 8cm,
+        xmin = 0, xmax = 25,
+        ymin = 0, ymax = 400,
+        axis lines = left,
+        xtick = {0, 10, 15, 20}, 
+        ytick = {200, 300},
+        x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+        y label style={at={(axis description cs:-0.12,.5)},anchor=south},
+        xlabel = {\small $CD$, number of CDs},
+        ylabel = {\small $y$, units of the `composite' good},
+        clip = false,
+      ]
+        % Budget Line 1
+        \addplot[domain = 0:15, samples = 400, color = cranberry!60!white, thick]{300 - 20*x};
+        \node [anchor = south west, yshift=-0.2cm] at (axis cs:0, 300) {$BL_1$};
+        
+        % Budget Line 2
+        \addplot[domain = 0:20, samples = 400, color = cranberry, thick]{200 - 10*x};
+        \node [anchor = south west, yshift=-0.2cm] at (axis cs:0, 200) {$BL_2$};
+
+        % Indifference curves
+        \addplot[domain = 4:24, restrict y to domain = 0:400, samples = 400, color = alice!70!white, very thick]{1050/x^(0.8) - 57};
+
+        % Highlight Points
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+          coordinates {(7.6, 148)};
+        \node [anchor = south west] at (axis cs:7.6, 148) {$A$};
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 148) (7.6, 148) (7.6, 0)};
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+
+
+\begin{frame}{Clubs and Two-Part Tariffs}
+  Note that with the two-part tariff:
+  
+  \bigskip
+  \begin{enumerate}
+    \item Some consumers (those who want to buy relatively more of the product) will choose to pay the $ \$100$ fee.
+    \item Those who wouldn't have bought many units anyway won't benefit from the two-part tariff.
+  \end{enumerate}
+  
+  \pause\bigskip
+  What are some other examples of products where you can pay a flat rate in exchange for a lower per-unit price?
+\end{frame}
+
+
+
+
+\end{document}

@@ -1,0 +1,385 @@
+\documentclass[11pt,t]{beamer}
+\input{preamble.tex}
+
+\author{Kyle Butts}
+\title{Lecture 1 - Introduction to Intermediate Microeconomics}
+\subtitle{ECON 3070 - Intermediate Microeconomic Theory}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Why Study Microeconomics?}
+  \begin{center}
+    Resources are \textbf{scarce}, but \textbf{wants} are unlimited.
+  \end{center}
+
+  \pause\bigskip
+  \begin{center}
+    Economics tries to answer how people balance \bgCranberry{trade-offs}
+  \end{center}
+
+  \pause\bigskip
+  \begin{center}
+    People respond to \bgKelly{incentives}
+  \end{center}
+
+  \pause\bigskip
+  \begin{center}
+    People make decisions \bgDaisy{on the margin}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Why Study Microeconomics?}
+  \bgCranberry{Trade-offs}
+  \begin{itemize}
+    \item How do you chose to spend your (scarce) time? 
+    \item How do you spend your (scarce) money?
+  \end{itemize}
+
+  \pause\bigskip
+  \bgKelly{Incentives}
+  \begin{itemize}
+    \item How will people respond to a gas tax? (rebound-effect) 
+    \item Why are B-cycles always broken? (tragedy of the commons)
+  \end{itemize}
+
+  \pause\bigskip
+  \bgDaisy{On the margin}
+  \begin{itemize}
+    \item Do I watch one more episode or go to bed? 
+    \item How much pollution should we allow?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Analytical Tools}
+  Economic models: A formal description of a problem being addressed.
+
+  \bigskip
+  Examples:
+  \begin{itemize}
+    \item How the draught in California might affect the price of coffee in the United States.
+    \item How an individual makes the decision of whether to attend college, vocational school, or neither.
+    \item How a man or woman chooses their spouse/partner.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Three Tools of Microeconomic Analysis}
+  Nearly all microeconomic models rely on just three key analytical tools:
+  \begin{enumerate}
+    \item Constrained optimization
+    \item Equilibrium analysis
+    \item Comparative statics
+  \end{enumerate}
+
+  \bigskip
+  Throughout this course, we will use these three tools to analyze microeconomic problems.
+\end{frame}
+
+\begin{frame}{Calculus Aside}
+  This class is going to require you to do a lot of algebra and take a lot of partial derivatives. People in this class are coming in with different skill levels, which is okay!
+
+  \bigskip
+  In your first recitation, we are doing a `partial derivative bootcamp', so you will have time to practice. If you don't spend the time now remembering how to take them, the whole course will be hard on you
+\end{frame}
+
+\begin{frame}{Constrained optimization}
+  \textbf{Constrained optimization} is used when a decision maker seeks to make the optimal choice, taking into account any possible limitations or restrictions on choices
+
+  \bigskip
+  \bgRuby{Example} 
+  
+  \bigskip
+  An individual seeks to maximize, through their choice of Friday night activities, their happiness.
+
+  \begin{itemize}
+    \item An \textbf{objective function} is the relationship that the decision maker seeks to optimize (e.g. maximize their Friday night).
+    \item  The decision maker has to take into consideration their \textbf{constraints} (e.g. the individual only has \$20 to spend).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Constrained Optimization}
+  A farmer needs to build a rectangular fence for her sheep. She has \textit{F} feet of fence, and is able to choose the dimensions (\textit{L} and \textit{W}) of her pen. Her goal is to maximize the area of the pen.
+
+  \bigskip
+  What is the objective function and what is the constraint?
+
+  \pause
+  \begin{itemize}
+    \item The farmer's \textbf{objective function} is the function for the area of the pen, \textit{L*W}.
+    \item The farmer's \textbf{constraint} is that they only have \textit{F} feet of fence.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Constrained Optimization}
+  \bgCoral{Try It Yourself} 
+
+  \bigskip
+  A baker has 8 hours in a day, during which he can bake cakes and brownies. If he bakes a cake, he can sell it for \$10, and it will take him 2 hours. If he bakes a tray of brownies, he can sell it for \$8, and it takes him 1 hour. However, the baker only has the supplies to bake at most 4 trays of brownies and 3 cakes in a given day. 
+  
+  \medskip
+  How many brownies and cakes should the baker bake?
+\end{frame}
+
+\begin{frame}
+  
+\end{frame}
+
+\begin{frame}{Marginal Reasoning and Constrained Optimization}
+  Continuing our example of the baker maximizing their profit. Suppose the baker is currently baking 3 cakes and 2 trays of brownies. Their profit is \$46.
+
+  \bigskip
+  What would his profit be if he instead baked 2 cakes, and 4 trays of brownies? 
+
+  \begin{itemize}
+    \item He would gain \$16 from the two additional brownie trays and lose \$8 for the cake.
+    \item The additional profit gained, \$8 reflects the \textit{marginal} impact of the decision.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Margin = ``Of Another''}
+  In economics, you will \emph{always} hear the world `marginal'. When you hear it, you can always replace it with the phrase `of another'
+
+  \begin{itemize}
+    \item So for example, if I say ``what is the marginal benefit of studying?'', I mean ``what is the benefit of studying another hour?''
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Equilibrium Analysis}
+  An \textbf{equilibrium} in a system is a state or condition that will continue indefinitely as long as exogenous factors remain unchanged.
+
+  \bigskip
+  In a competitive market, equilibrium occurs when the price is such that the quantity supplied by producers is equal to the quantity demanded by consumers.
+\end{frame}
+
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+      width = 12cm,
+      height = 9cm,
+      xmin = 0, xmax = 30,
+      ymin = 0, ymax = 9,
+      axis lines = left,
+      xtick = \empty, ytick = \empty,
+      x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+      y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+      xlabel = {\small Quantity (billion of bushels per year)},
+      ylabel = {\small Price (dollars per bushel)},
+      clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small Demand};
+        
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small Supply};
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 3) (9, 3) (9, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(14, 3) (14, 0)};      
+
+      % Curly brace
+      \draw [decorate,decoration={brace,amplitude=2pt,mirror}, yshift = -0.2cm]
+        (axis cs:9,3) -- (axis cs:14,3) node [black, midway, yshift = -0.8cm] 
+        {\small 
+          \begin{tabular}{l}Excess demand \\ when price is $\$3$\end{tabular}
+        };
+  
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(9, 3) (11, 4) (14, 3)};
+      \node [above] at (11, 4.25) {\small $E$};
+  
+      % Labels
+      \node [left] at (0, 3) {\small $\$3$};
+      \node [left] at (0, 4) {\small $\$4$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (9, 0) {\small $9$};
+      \node [below] at (11, 0) {\small $11$};
+      \node [below] at (14, 0) {\small $14$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 30,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+    y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+    xlabel = {\small Quantity (billion of bushels per year)},
+    ylabel = {\small Price (dollars per bushel)},
+    clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small Demand};
+        
+      % Supply Curve
+      \addplot[color = ruby, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small Supply};
+    
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 5) (8, 5) (8, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(13, 5) (13, 0)};      
+
+      % Curly brace
+      \draw [decorate,decoration={brace,amplitude=2pt}, yshift = 0.2cm]
+        (axis cs:8,5) -- (axis cs:13,5) node [black, midway, yshift = 0.8cm] 
+        {\small \begin{tabular}{l}Excess supply \\ when price is $\$5$\end{tabular} };
+  
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(8, 5) (11, 4) (13, 4)};
+      \node [above] at (11, 4.25) {\small $E$};
+  
+      % Labels
+      \node [left] at (0, 3) {\small $\$3$};
+      \node [left] at (0, 4) {\small $\$4$};
+      \node [below] at (0, 0) {\small $0$};
+      \node [below] at (8, 0) {\small $8$};
+      \node [below] at (11, 0) {\small $11$};
+      \node [below] at (13, 0) {\small $13$};
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Comparative Statics}
+  \textbf{Comparative statics} analysis is used to examine how a shock to a system will affect another variable in an economic model. 
+  
+  \begin{itemize}
+    \item This is really useful since it let's you decide whether or not to take an action by predicting how it affects variables you care about
+  \end{itemize}
+
+  Comparative statics analysis can be applied to constrained optimization or to equilibrium analysis.
+\end{frame}
+
+\begin{frame}{Comparative Statics}
+  Consider the market for pistachios:
+
+  \begin{itemize}
+    \item We can see what will happen to the price and quantity of pistachios in the market when the supply curve shifts.
+    \item The shift in the supply curve represents an exogenous shock.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]
+  \begin{tikzpicture}
+    \begin{axis}[
+    width = 12cm,
+    height = 9cm,
+    xmin = 0, xmax = 25,
+    ymin = 0, ymax = 9,
+    axis lines = left,
+    xtick = \empty, ytick = \empty,
+    x label style={at={(axis description cs:1,0)},anchor=north east},
+    y label style={at={(axis description cs:0,1)},anchor=south east},
+    xlabel = {Quantity},
+    ylabel = {Price},
+    clip = false,
+    ]
+      % Demand Curve
+      \addplot[color = alice, very thick] 
+        coordinates {(0, 23/3) (11, 4) (14, 3) (23, 0)};
+      \node [anchor = south west, text width = 3cm] at (23, 0) 
+        {\small $D$};
+        
+      % Supply Curve 1
+      \addplot[color = ruby!50!white, very thick] 
+      coordinates {(4, 1/2) (9, 3) (11, 4) (15, 6)};
+      \node [anchor = south west, text width = 3cm] at (15, 5.5) 
+        {\small $S_1$};
+
+      % Supply Curve 2
+      \addplot[color = ruby, very thick] 
+      coordinates {(0, 1/2) (5, 3) (7, 4) (11, 6) (15, 8)};
+      \node [anchor = south west, text width = 3cm] at (15, 7.5) 
+        {\small $S_2$};
+     
+
+      % Coordinate Points
+      \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(8.6, 4.8) (11, 4)};
+      \node [above] at (11, 4.25) {\small $A$};
+      \node [above] at (8.5, 5) {\small $B$};
+
+      % Curve shift arrow
+      \draw[-stealth, very thick, ruby] (axis cs:13.8, 5.5) -- (axis cs:10.2, 5.5);
+  
+      % Dotted lines
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4) (11, 4) (11, 0)};
+      \addplot[color = black, dotted, thick] 
+        coordinates {(0, 4.8) (8.5, 4.8) (8.5, 0)};
+
+      % Axis Labels
+      \node [anchor = south, rotate = 90] at (axis cs: 0, 4.4) 
+      {\begin{tabular}{c}{\small Equilibrium price goes up} \\ $\rightarrow$\end{tabular}};
+
+      \node [anchor = north] at (axis cs: 9.8, 0) 
+      {\begin{tabular}{c}$\leftarrow$ \\ {\small Equilibrium quantity goes down}\end{tabular}};
+
+    \end{axis}
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Positive and Normative Analysis}
+  \textbf{Positive analysis} attempts to explain how an economic system works or to predict how it will change over time.
+
+  \begin{itemize}
+    \item Explanatory questions, such as "What has happened?"
+  \end{itemize}
+
+  \bigskip
+  \textbf{Normative analysis} asks prescriptive questions.
+
+  \begin{itemize}
+    \item Involves value judgements.
+  \end{itemize}
+
+  \bigskip
+  \begin{center}
+  This class will focus on positive analysis.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Positive and Normative Analysis}
+  
+  Which of the following is a positive statement?
+
+  \bigskip
+  \begin{enumerate}[A)]
+    \item Rent controls (a rent ceiling) will cause a housing shortage.
+    \item It would be good for the U.S if we stop trading with China.
+    \item The minimum wage should be raised to make poor people better off.
+    \item Businesses need to pay their employees a living wage.
+  \end{enumerate}
+\end{frame}
+
+\end{document}
