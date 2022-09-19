@@ -41,7 +41,7 @@ table <- tribble(
   ~Icon, ~Name, ~Time, ~Location,
   as.character(icons::fontawesome("chalkboard-teacher")), "Instructor", "Kyle Butts", "<a href = 'emailto:kyle.butts@colorado.edu'>kyle.butts@colorado.edu</a>",
   as.character(icons::fontawesome("school")), "Lecture", "MWF 9:05-9:55am", "Hellems 241",
-  as.character(icons::fontawesome("laptop-house")), "Office Hours", "MW 11am-12:30pm", "<a href = 'https://cuboulder.zoom.us/j/3975335005'>Zoom</a>",
+  as.character(icons::fontawesome("laptop-house")), "Office Hours", "M 11am-12:30pm and W 2-3:30pm", "<a href = 'https://cuboulder.zoom.us/j/3975335005'>Zoom</a>",
   as.character(icons::fontawesome("chalkboard-teacher")), "TA", "Ben.Zhang@colorado.edu", "<a href = 'emailto:Ben.Zhang@colorado.edu'>ben.zhang@colorado.edu</a>",
   as.character(icons::fontawesome("book")), "Textbook", "Microeconomics by Besanko and Braeutigam", "",
 )
