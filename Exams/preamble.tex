@@ -1,0 +1,66 @@
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{helvet}
+
+%% Sets page size and margins
+\usepackage[letterpaper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{accents}
+\usepackage{multicol}
+
+% For better list numbering
+\usepackage[shortlabels]{enumitem}
+
+% Font
+% \usepackage{tgbonum}
+
+
+% Tikz
+\usepackage{tikz}
+
+\usetikzlibrary{calc,fit,shapes.misc,backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usetikzlibrary{positioning, arrows.meta}
+\usepgfplotslibrary{fillbetween}
+
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Store \@title as \thetitle
+\makeatletter
+\let\thetitle\@title
+\makeatother
+
+\fancyhf{}
+\lhead{\fontfamily{qbk}\fontsize{10}{11}\selectfont ECON 3070}
+\rhead{\fontfamily{qbk}\fontsize{10}{11}\selectfont \thetitle}
+\rfoot{\fontfamily{qbk}\fontsize{10}{11}\selectfont \thepage}
+
+
+% Sections and Subsections
+
+% define colors
+\definecolor{buff-gold}{HTML}{CFB87C}
+\definecolor{buff-grey}{HTML}{565A5C}
+% custom tcolorbox
+\tcbset{colframe=buff-gold, colback=white!100!black}
+
+% new page per section
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+% change style of section
+\usepackage{sectsty}
+\sectionfont{\color{buff-gold} \fontfamily{qbk}\selectfont}
+\subsectionfont{\color{buff-grey} \fontfamily{qbk}\selectfont}
