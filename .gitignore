@@ -5,3 +5,10 @@
 **/*.fls
 **/*.log
 **/*.synctex.gz
+**/*.bcf
+**/*.run.xml
+**/*.xdv
+Problem Sets _ Solutions/*
+
+# R
+.Rhistory
