@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\title{Midterm 2}
+\input{preamble.tex}
+
+\newtoggle{INCLUDEANSWERS}
+\toggletrue{INCLUDEANSWERS}
+\newcommand{\answer}[1]{\iftoggle{INCLUDEANSWERS}{{\color{violet!70!white}\textbf{Solution:} #1}}{} }
+
+\newtoggle{INCLUDEPOINTS}
+\togglefalse{INCLUDEPOINTS}
+\newcommand{\points}[1]{\iftoggle{INCLUDEPOINTS}{{\color{blue!70!white}(#1 pts.)}}{}}
+
+
+\begin{document}
+  
+\emph{Good luck y'all!}
+
+\begin{enumerate}
+  \item \points{10} A firm with cobb-douglas technology is producing the required amount of output, $\bar{Q}$ units with $MP_k / r = 1$ and $MP_L / w = 2$. Is this firm producing at the lowest-possible cost? If not, explain how the firm could shift between inputs and lower costs.
+  
+  \answer{
+    In this setting, firms should shift inputs toward labor and away from capital since \$1 spent on labor produces more output than \$1 spent on capital. The firm could keep output constant and save money by shifting towards labor.
+  }
+
+  \item Consider the production function $Q(K, L) = 4K + 2L$
+  \begin{enumerate}
+    \item \points{5} In the short-run, capital is fixed at $\bar{K} = 4$ units. A firm is going to produce $Q = 40$ units, what is the optimal input of labor $L^*$ used?
+    
+    \item \points{10} What is the short-run total cost function to produce $Q$ units in terms of $Q$, $w$, and $r$?
+    
+    \item \points{10} In the long-run, what are the optimal conditional input demands for labor and capital when $w = 4$ and $r = 6$, i.e. $K^*(Q, w, r)$ and $L^*(Q, w, r)$?
+  \end{enumerate}
+
+  \answer{
+    \begin{enumerate}
+      \item $40 = 4 * \bar{K} + 2L = 16 + 2L \implies L^* = 12$
+      
+      \item $Q = 16 + 2L \implies L^*(Q) = Q/2 - 8$.
+      
+      Therefore, the short-run total cost is $SRTC(Q) = r*4 + w*(Q/2 - 8)$
+
+      \item $MP_K/r = 4/6 = 2/3$ and $MP_L/w = 2/4 = 1/2$. Therefore, $L^*(Q, w, r) = 0$ since the marignal product per dollar for capital is larger. $Q = 4K \implies K^*(Q, w, r) = Q/4$.
+    \end{enumerate}
+  }
+
+  \item Consider the long-run total cost function $TC(Q) = 2.5Q^2 + 4Q + 40$.
+  \begin{enumerate}
+    \item \points{5} Find the marginal cost function, $MC(Q)$, and the average cost function $ATC(Q)$.
+    
+    \item \points{10} What is the marginal cost when $Q = 10$? Interpret this number in words.
+    
+    \item \points{10} When is this firm experiencing economies of scale?
+  \end{enumerate}
+
+  \answer{
+    \begin{enumerate}
+      \item $MC(Q) = \partial TC(Q) / \partial Q = 5Q + 4$ and $ATC(Q) = TC(Q) / Q = 2.5Q + 4 + 40/Q$.
+      \item $MC(10) = 5 * 10 + 4 = 54$. This means the 10th unit cost \$54 to produce.
+      \item The minimum efficient scale is given by $MC(Q) = ATC(Q)$.
+      $$
+        5Q + 4 = 2.5Q + 4 + 40/Q \implies Q^{MES} = 4
+      $$
+      Therefore, the firm is experiencing economies of scale when $Q < 4$. 
+    \end{enumerate}
+  }
+
+  \item Consider the production function $Q(K,L) = K^{1/2}L^{1/2}$.
+  \begin{enumerate}
+    \item \points{5} What is the marignal product of labor when $K = 5$ and $L = 10$? Interpret this in words.
+
+    \item \points{10} What is the marginal rate of technical substitution $MRTS_{K,L}$ when $K = 5$ and $L = 10$? Interpret this in words.
+    
+    \item \points{10} Is this firm a constant, increasing, or decreasing returns to scale function?
+  \end{enumerate}
+
+  \answer{
+    \begin{enumerate}
+      \item $MP_L(K, L) = 1/2 L^{-1/2}K^{1/2}$. $MP_L(5, 10) = 1/2 * \sqrt{5} / \sqrt{10} = \sqrt{2}/4$. This implies at $K = 5$ and $L = 10$, increasing labor by 1 unit increases output by $\sqrt{2}/4$ units.
+      
+      \item $MP_K(K, L) = 1/2 K^{-1/2}L^{1/2}$. This implies 
+      $$
+        MRTS_{K,L} = \frac{MP_K}{MP_L} = \frac{1/2 K^{-1/2}L^{1/2}}{1/2 L^{-1/2}K^{1/2}} = \frac{L}{K} = 2
+      $$
+      To interpret, when $K = 5$ and $L = 10$, giving up one unit of labor requires $2$ units of capital to keep output constant
+
+      \item $Q(\lambda K, \lambda L) = (\lambda K)^{1/2} (\lambda L)^{1/2} = \lambda Q(K, L)$. Therefore the firm is experiencing constant returns to scale.
+    \end{enumerate}
+  }
+
+  \item \points{15} A firm's cost function is given by $TC(Q) = 8Q + 40$. Show if this firm experiences economy of scale. 
+  
+  \answer{
+    The firm's average total cost curve is given by $ATC(Q) = (8Q + 40)/Q = 8 + 40/Q$. The firm is experiencing economies of scale since
+    $$
+      \partial ATC(Q) / \partial Q = - 40 / Q^2 < 0
+    $$
+  }
+\end{enumerate}
+
+
+\end{document}

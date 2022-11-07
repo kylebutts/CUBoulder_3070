@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+\title{Midterm 1}
+\input{preamble.tex}
+
+\newtoggle{INCLUDEANSWERS}
+\toggletrue{INCLUDEANSWERS}
+% \togglefalse{INCLUDEANSWERS}
+
+\newcommand{\answer}[1]{\iftoggle{INCLUDEANSWERS}{{\color{violet!70!white}\textbf{Solution:} #1}}{}}
+
+
+\begin{document}
+\emph{Good luck to you!}
+  
+\begin{enumerate}
+  \item If disposable incomes rise by 5\% and demand changes from 100 units to 105, what is the income elasticity of demand? Interpret this number.
+  
+  \answer{\emph{(10 pts.)} 
+  
+    $\% \Delta \text{ in } Q = \frac{105 - 100}{100} = 0.05$
+
+    $$
+      \varepsilon_{I, Q} = \frac{\% \Delta \text{ in } Q}{\% \Delta \text{ in } I} = \frac{0.05}{0.05} = 1
+    $$
+
+    To intrepret, a 1\% increase in income yields a 1\% increase in quantity demanded.
+  }
+
+
+  \bigskip
+  \item The law of demand tells us that when the price of a good goes up, the quantity demanded for that good goes down. Describe why a business might want to know the price elasticity of demand.
+  
+  \answer{\emph{(10 pts.)}
+
+    The price elasticity of demand tells you \emph{how much} demand decreases with a price increase. This can be used to help optimally price products. If a good is very inelastic, then you can raise prices without losing many sales, for example.
+  }
+  
+  \bigskip
+  \item Consider the demand function $x^*(P_x, P_y, I) = \frac{I}{P_x P_y}$
+  
+  \begin{enumerate}
+    \item Does this good satisfy the law of demand?
+    \item Is this good a normal good or a inferior good?
+    \item Are goods $x$ and $y$ substitutes, complements, or neither?
+    \item If the maker of good $y$ raises the price of their good, how does that affect the sales of good $x$?
+  \end{enumerate}
+
+  \answer{\emph{(20 pts.)}
+    \begin{enumerate}
+      \item \emph{(5 pts.)} $\frac{\partial x^*}{\partial P_x} < 0$ (denominator grows, so $x^*$ goes down). Therefore, this good satisfies the law of demand ($P_x \uparrow$ implies $x^* \downarrow$)
+
+      \item \emph{(5 pts.)} $\frac{\partial x^*}{\partial I} = \frac{1}{P_x P_y} > 0$. Therefore $I \uparrow$ implies $x^* \uparrow$. Hence, good $x$ is a normal good.
+      
+      \item \emph{(5 pts)} ] $\frac{\partial x^*}{\partial P_y} < 0$. Therefore $P_y \uparrow$ implies $x^* \downarrow$ and hence goods $x$ and $y$s are complements. 
+      
+      \item \emph{(5 pts.)} Since $x$ and $y$ are complements, the demand for good $x$ goes down after an increase in price of $y$.
+    \end{enumerate}
+  }
+  
+  \bigskip
+  \item For the utility function $U(x,y) = 2x + 4y$, Calculate the marginal rate of substitution $MRS_{x,y}$. Interpret this number in words.
+  
+  \bigskip
+  \item For the following utility functions, draw three indifference curves
+  \begin{enumerate}
+    \item $U(x,y) = 2x + 4y$
+    
+    \item $U(x,y) = min(x, 2y)$
+  \end{enumerate}
+
+  \answer{\emph{(15 pts.)}
+    \begin{enumerate}
+      \item \emph{(7.5 pts.)} $\bar{U} = 2x + 4y \implies y = \bar{U}/2 - x/2$. Therefore, indifference curves are a bunch of downward-sloping lines
+      
+      \item \emph{(7.5 pts.)} "brackets" along the line $x = 2y$.  
+    \end{enumerate}
+  }
+
+  \bigskip
+  \item There are two suppliers in the market, Starbucks and Dunkin, who sell coffee. Their supply curves are given by $Q_{Starbucks}^S = -10 + 2P$ and $Q_{Dunkin}^S = -20 + 2P$. Demand for coffee in Boulder is given by $Q_{mkt}^D = 42 - 2P$.
+  
+  \begin{enumerate}
+    \item Solve for the market supply, $Q_{mkt}^S$. 
+    
+    \answer{
+      $$
+        Q_{mkt}^S =
+        \begin{cases}
+          0        & \text{if } 0 < P < 5 \\
+          -10 + 2P & \text{if } 5 \leq P \leq 10 \\
+          -30 + 4P & \text{if } P \geq 10
+        \end{cases}
+      $$
+    }
+    
+    \item What is the equilibrium price and quantity for coffee?
+    
+    \answer{
+      $$
+        P^* = 12 \text{ and } Q^* = -30 + 4 * 12 = 18
+      $$
+    }
+    
+    \item Suppose the demand curve, shifts out to $Q_{mkt}^D = 60 - 2P$, will the market price go up or go down? (hint: no need for math)
+    
+
+  \end{enumerate}
+
+  \answer{\emph{(15 pts.)}
+    \begin{enumerate}
+      \item \emph{(5 pts.)} 
+
+      $$
+        Q_{mkt}^S =
+        \begin{cases}
+          0        & \text{if } 0 < P < 5 \\
+          -10 + 2P & \text{if } 5 \leq P \leq 10 \\
+          -30 + 4P & \text{if } P \geq 10
+        \end{cases}
+      $$
+
+      \item \emph{(5 pts.)} 
+      
+      Try $-10 + 2P = 42 - 2P \implies P^* = 13$. This would violate $5 \leq P < 10$. 
+
+      Try $-30 + 4P = 42 - 2P \implies P^* = 12$. Plugging into demand gives $Q^* = 42 - 2 * 12 = 18$.
+
+      \item \emph{(5 pts.)} The demand curve goes up, so the equilibrium price increases.
+    \end{enumerate}
+  }
+
+  \bigskip
+  \item Consider the following consumer optimal consumption problem 
+  $$
+    \max_{x,y} x^{1/5} y^{4/5} \text{ subject to } P_x x + P_y y = I
+  $$
+
+  \begin{enumerate}
+    \item What is the optimality condition? Interpret in words, why we know that if the consumer is consuming optimally the optimality condition must hold. 
+    
+    \item Solve for optimal demand $x^*(P_x, P_y, I)$ and $y^*(P_x, P_y, I)$
+    
+    \item At price $P_x = 5$, $P_y = 10$, and $I = 100$, what is optimal demand for $x$ and $y$?
+    
+    \item Using the optimal demand, $x^*$, is good $x$ a normal good or an inferior good? How do you know?
+    
+    \item What is the demand curve for good $x$, $x^*(P_x)$, when $P_y = 10$ and $I = 100$? Draw this curve. From your graph, does this good sastisfy the law of demand?
+  \end{enumerate}
+
+  \answer{\emph{(20 pts.)}
+    \begin{enumerate}
+      \item \emph{(10 pts.)}
+      
+      $$\frac{MU_x}{P_x} = \frac{MU_y}{P_y} \implies y = 4 \frac{P_x}{P_y} x$$
+
+      \item \emph{(3 pts.)} Pluging the optimality condition into the budget constraint yields
+      
+      $$
+        I = P_x * x + P_y * 4 \frac{P_x}{P_y} x = 5P_x x \implies x^* = \frac{I}{5P_x}
+      $$
+      
+      Similarly, $y^* = \frac{4I}{5P_y}$.
+      
+
+      \item \emph{(3 pts.)}
+      
+      $$
+        x^* = \frac{100}{5 * 5} = 4 \text{ and } y^* = \frac{4 * 100}{5 * 10} = 8
+      $$
+
+
+      \item \emph{(2 pts.)}
+      
+      $$
+        \frac{\partial x^*}{\partial I} = \frac{1}{5P_x} > 0 \implies x \text{ is a normal good.}
+      $$
+      
+      \item \emph{(2 pts.)}
+      $$ 
+        x^*(P_x) = \frac{100}{5P_x} = \frac{20}{P_x}
+      $$
+
+      This is a downward sloping curve, which satisfies the law of demand ($P_x \uparrow$ implies $x^* \downarrow$)
+      
+
+    \end{enumerate}
+  }
+
+
+\end{enumerate}
+
+
+\end{document}
