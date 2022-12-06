@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\title{Final Exam}
+\input{preamble.tex}
+
+\newtoggle{INCLUDEANSWERS}
+\togglefalse{INCLUDEANSWERS}
+\newcommand{\answer}[1]{\iftoggle{INCLUDEANSWERS}{{\color{violet!70!white}\textbf{Solution:} #1}}{} }
+
+\newtoggle{INCLUDEPOINTS}
+\togglefalse{INCLUDEPOINTS}
+\newcommand{\points}[1]{\iftoggle{INCLUDEPOINTS}{{\color{blue!70!white}(#1 pts.)}}{}}
+
+
+\begin{document}
+  
+\section*{Final Exam Prep}
+
+Note that the exam will be cummulative covering all the material we learnt during the course. That being said, more questions will be on the most recent material than the first two. For this reason, see the Midterm 1 and 2 prep documents.
+
+\subsection*{Perfect Competition}
+
+\begin{enumerate}
+  \item Suppose that each firm in a perfectly competitive market has long run cost represented as $TC(Q) = 5Q^2 - 10Q + 45$.
+
+  \begin{enumerate}
+    \item If the firm's goal is to maximize profit in a perfectly competitive market, find the optimal quantity, $Q^*(P)$, that each firm will choose to sell at a given price $P$.
+
+    \item What will the long-run price in this market be? What will each firm's long-run profits be?
+
+    \item Suppose that the market demand is given by $Q_D = 400 - 5P$. How many firms will enter the market in the long run?
+    
+  \end{enumerate}
+
+  Now suppose that, due to changing tastes, consumer demand has shifted outward, such that $Q_D = 460 - 5P$
+  \begin{enumerate}
+    \item[(d)] Find the new price and quantity that each firm will sell the good at in the long-run (assuming constant input prices).
+
+    \item[(e)] How many additional firms will enter the market, in response to the increased demand?
+  \end{enumerate}
+
+  \item Suppose that a profit-maximizing firm has the production function $Q(K, L) = 10 K^{1/2} L^{1/2}$ and a fixed cost of $40$.
+
+  \begin{enumerate}
+    \item (Review) Find the firm's long-run total cost curve in a perfectly-competitive market when $w = 4$, $r = 16$.
+    
+    \answer{
+      The optimality condition is given by 
+      $$
+        \frac{5 K^{1/2} L^{-1/2}}{4} = \frac{5 K^{-1/2} L^{1/2}}{16} \implies K = L/4.
+      $$
+      Plugging that into the production constraint $Q = 10 K^{1/2} L^{1/2}$ yields $K^*(Q) = Q/20$ and $L^*(Q) = Q/5$. This produces a total cost curve of $TC(Q) = 40 + 8/5Q$
+    }
+    
+    \item Now, suppose that capital is fixed in the short-run at $\bar{K} = 4$ units. What is the optimal labor and capital inputs as a function of output quantity $Q$?
+  \end{enumerate}
+
+  % From http://web.boun.edu.tr/muratyilmaz/my/EC203_files/EC203%20-%20Problem%20Set%208%20-%20Solutions.pdf
+
+  \item The bolt-making industry currently consists of $20$ producers, all of whom operate with the identical short-run total cost curves $SRTC(Q) = 10 + Q^2$ where $Q$ is the output of a firm. The market demand for bolts is $Q_D = 110 − p$ and the industry is perfectly competitive.
+  
+  \begin{enumerate}
+    \item What is the short-run supply curve of a firm? What is the short-run supply curve of the market?
+    
+    \item Determine the short-run equilibrium price and quantity in this industry.
+  \end{enumerate}
+
+  \item Suppose that in a perfectly competitive market each firm has a long-run marginal cost given by $MC(Q) = 100 − 20Q + 3Q^2$, and a long-run average cost $ATC(Q) = 100 − 10Q + Q^2$. The market demand is given by $Q_D = 22500 − 100p$.
+  
+  \begin{enumerate}
+    \item When the market price is $88$, what is the optimal quantity a firm should produce? How much profit do they make at this price?
+    
+    \item What is the long-run competitive equilibrium price in this market?
+    
+    \item How many firms are in this market in a long-run competitive equilibrium?
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Competitive Markets - Applications}
+
+\begin{enumerate}
+  \item Suppose that in the market for Taylor Swift concert tickets, market supply is given by $Q_S = 20P - 80$ and market demand is given by $Q_D = 970 - P$.
+
+  \begin{enumerate}
+    \item[(a)] Find the market equilibrium price and quantity in this market.
+
+    \item[(b)] Find the consumer surplus and producer surplus in this market.
+
+    \item[(c)] What is the total surplus in the market?
+  \end{enumerate}
+
+  Now suppose the government intervenes and puts a price ceiling of \$40 per ticket.
+
+  \begin{enumerate}
+    \item[(d)] Is the market now experiencing excess demand or excess supply?
+
+    \item[(e)] What will be the equilibrium quantity after the price-ceiling is imposed? What price will consumers pay? What price will producers receive?
+
+    \item[(f)] What is the deadweight loss from the price ceiling? What is the source of this deadweight loss?
+  \end{enumerate}
+
+
+  \item In a perfectly competitive market for juul pods, the market demand curve is given by $Q_D = 140 - 10P$, and the market supply curve is given by $Q_S = 4P$.
+  
+  \begin{enumerate}
+    \item[(a)] Find the equilibrium market price and quantity demanded and supplied in the absence of price controls.
+    
+    \item[(b)] Calculate consumer, producer, and total surplus at the market equilibrium. (\emph{Note:} You may want to invert the supply and demand curves first, so that you have $P$ as a function of $Q$).)
+    
+    \item[(c)] At the equilibrium price and quantity, what is the price elasticity of demand and of supply? Which curve is relatively more elastic at this point?
+  \end{enumerate}
+
+  The government in an effort to lower juul pod usage imposes a tax of \$3.50 per pod. 
+  
+  \begin{enumerate}
+    \item[(d)] What will be the equilibrium quantity after the tax is imposed? What price will consumers pay? What price will producers receive?
+    
+    \item[(e)] Based on your answer for (c), who do you think would pay the larger incidence of the tax? What is the true incidence of this subsidy? In other words, how much does the consumer's price decrease, and how much does the producer's price increase? Is your prediction correct?
+
+    \item[(f)] What is the total deadweight loss that results from the subsidy?
+
+    \item[(g)] What is the source of the deadweight loss that results from the subsidy?
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Monopoly and Market Power and Capturing Surplus}
+
+\begin{enumerate}
+  \item Consider the demand curve $P = 100 - 5Q$.
+  
+  \begin{enumerate}
+    \item What is the marginal revenue of moving from selling 5 units to 6 units? Break this into the price effect and the quantity effect and describe what each one means in words. 
+  \end{enumerate}
+
+  \item Suppose that a monopolist has long run cost represented as $TC(Q) = 25Q^2 + 20Q + 450$. Demand is given by $P = 500 - 5Q$. 
+
+  \begin{enumerate}
+    \item Find the firm's profit maxmizing quantity and the market price they sell at. Does this firm experience economic profit?
+    
+    \item In the long run, will profits go to zero? Why or why not?
+    
+    \item If the firm needed to pay money to obtain a license to be a monopolist, how much \emph{at most} would they be willing to pay to avoid a perfectly competitive market?
+    
+    \item For this question only, suppose income rises such that demand rises to $P = 620 - 5Q$. What is the new profit-maximizing quantity?
+    
+    \item Assume this firm can first-degree price-discriminate. What is the new producer surplus with demand being $P = 500 - 5Q$?
+  \end{enumerate}
+
+  \item Suppose a monopoly can discriminate between two types of consumers: a high demand group with demand $P_H = 50 - 4Q_H$, and a low demand
+  group with $P_L = 30 - 1/2 Q_L$. The monopolies' total cost function is given by $TC(Q) = 10 + 2Q$. 
+  
+  \begin{enumerate}
+    \item Compute the monopoly's optimal quantities $Q_H$ and $Q_L$.
+    
+    \item Calculate the profit of the monopoly.
+  \end{enumerate}
+
+  \item Describe what a barrier to entry is and why monopolists need it to make positive profit in the long-run.
+\end{enumerate}
+
+
+\end{document}
